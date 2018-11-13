@@ -6,22 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".LoginSuccessActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Welcome BRIAN FELIX"
-        android:textSize="20dp"
-        tools:layout_editor_absoluteX="91dp"
-        tools:layout_editor_absoluteY="67dp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Log In Successful"
-        android:textSize="20dp"
-        tools:layout_editor_absoluteX="113dp"
-        tools:layout_editor_absoluteY="185dp" />
+        <TextView
+            android:id="@+id/greeting_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Welcome BRIAN FELIX"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Log In Successful"
+            android:textSize="20dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+            android:layout_gravity="center"
+            android:onClick="onLogoutClick"/>
+    </LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>

@@ -43,13 +43,26 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/password_edit_text"
-            android:layout_marginBottom="40dp"/>
+            android:layout_marginBottom="40dp"
+            android:inputType="textPassword"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Login"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/signin_button"
+            android:onClick="onSigninClick"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:layout_gravity="center"
+            android:clickable="true"
+            android:id="@+id/register_text"
+            android:onClick="onRegisterClick"/>
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
