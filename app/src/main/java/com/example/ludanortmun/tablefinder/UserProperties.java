@@ -1,15 +1,28 @@
 package com.example.ludanortmun.tablefinder;
 
+import java.util.Map;
+import java.util.function.Function;
+
 public class UserProperties {
-    public String username;
-    public String email;
-    public String password;
-    public String name;
-    public String birthdate;
-    public String gender;
-    public String city;
-    public String favoriteGenre;
-    public String about;
+    private String username;
+    private String email;
+    private String password;
+    private String name;
+    private String birthdate;
+    private String gender;
+    private String city;
+    private String favoriteGenre;
+    private String about;
+
+    public UserProperties(String email, String name, String birthdate, String gender, String city, String favoriteGenre, String about) {
+        this.email = email;
+        this.name = name;
+        this.birthdate = birthdate;
+        this.gender = gender;
+        this.city = city;
+        this.favoriteGenre = favoriteGenre;
+        this.about = about;
+    }
 
     public UserProperties(String username, String email, String password, String name, String birthdate, String gender, String city, String favoriteGenre, String about) {
         this.username = username;
@@ -22,8 +35,6 @@ public class UserProperties {
         this.favoriteGenre = favoriteGenre;
         this.about = about;
     }
-
-    public UserProperties() { }
 
     public String getUsername() {
         return username;
@@ -59,5 +70,23 @@ public class UserProperties {
 
     public String getAbout() {
         return about;
+    }
+}
+
+class MapToUserPropertiesConverter implements Function<Map<String, String>, UserProperties> {
+
+    @Override
+    public UserProperties apply(Map<String, String> userPropertiesMap) {
+        String email = userPropertiesMap.get("email");
+        String name = userPropertiesMap.get("name");
+        String gender = userPropertiesMap.get("gender");
+        String city = userPropertiesMap.get("locale");
+        String birthdate = userPropertiesMap.get("birthdate");
+        String favoriteGenre = userPropertiesMap.get("custom:favorite_genre");
+        String about = userPropertiesMap.get("custom:about");
+
+        UserProperties properties = new UserProperties(email, name, birthdate, gender, city, favoriteGenre, about);
+
+        return properties;
     }
 }

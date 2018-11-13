@@ -26,11 +26,14 @@ public class LoginActivity extends Activity {
 
     public void onSigninClick(View view) {
         CognitoHelper cognitoHelper = CognitoHelper.getInstance(this);
-        if(cognitoHelper.signIn(usernameText.getText().toString(), passwordText.getText().toString())) {
+        boolean signInResult = cognitoHelper.login(usernameText.getText().toString(), passwordText.getText().toString());
+        if(signInResult) {
+            Intent welcomeActivity = new Intent(this.getApplicationContext(), LoginSuccessActivity.class);
             finish();
+            startActivity(welcomeActivity);
         }
         else {
-            Toast.makeText(getApplicationContext(), "Error. Check your credentials", Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(), "Error. Check your credentials or verify your email address", Toast.LENGTH_LONG).show();
         }
     }
 }

@@ -6,26 +6,23 @@ import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoDevice;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserSession;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.AuthenticationContinuation;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.AuthenticationDetails;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.ChallengeContinuation;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.continuations.MultiFactorAuthenticationContinuation;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.AuthenticationHandler;
 
-public class SignInTask extends AsyncTask<SignInParameters, Void, Boolean> {
+public class CheckSignedInTask extends AsyncTask<CheckSignedInParameters, Void, Boolean> {
     @Override
-    protected Boolean doInBackground(SignInParameters... signInParameters) {
-        final SignInParameters parameters = signInParameters[0];
+    protected Boolean doInBackground(CheckSignedInParameters... checkSignedInParameters) {
+        final CheckSignedInParameters parameters = checkSignedInParameters[0];
 
         AuthenticationHandler handler = new AuthenticationHandler() {
             @Override
             public void onSuccess(CognitoUserSession userSession, CognitoDevice newDevice) {
-                parameters.setResult(false);
+                parameters.setResult(userSession.isValid());
             }
 
             @Override
             public void getAuthenticationDetails(AuthenticationContinuation authenticationContinuation, String userId) {
-                AuthenticationDetails authDetails = new AuthenticationDetails(parameters.getUsername(), parameters.getPassword(), null);
-                authenticationContinuation.setAuthenticationDetails(authDetails);
                 authenticationContinuation.continueTask();
             }
 
@@ -41,39 +38,26 @@ public class SignInTask extends AsyncTask<SignInParameters, Void, Boolean> {
 
             @Override
             public void onFailure(Exception exception) {
-
+                parameters.setResult(false);
             }
         };
 
+
         parameters.getUser().getSession(handler);
+
 
         return parameters.getResult();
     }
 }
 
-
-class SignInParameters {
+class CheckSignedInParameters {
     private CognitoUser user;
-    private String username;
-    private String password;
     private boolean result;
 
-    public SignInParameters(CognitoUser user, String username, String password) {
+    public CheckSignedInParameters(CognitoUser user) {
+
         this.user = user;
-        this.username = username;
-        this.password = password;
-    }
-
-    public CognitoUser getUser() {
-        return user;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
+        result = false;
     }
 
     public boolean getResult() {
@@ -82,5 +66,10 @@ class SignInParameters {
 
     public void setResult(boolean result) {
         this.result = result;
+    }
+
+    public CognitoUser getUser() {
+
+        return user;
     }
 }
