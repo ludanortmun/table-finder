@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/table-finder.iml" filepath="$PROJECT_DIR$/table-finder.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/table-finder.iml" filepath="$PROJECT_DIR$/.idea/table-finder.iml" />
     </modules>
   </component>
 </project>
