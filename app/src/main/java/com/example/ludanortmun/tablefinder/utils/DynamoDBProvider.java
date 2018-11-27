@@ -12,7 +12,7 @@ import com.amazonaws.services.dynamodbv2.AmazonDynamoDB;
 import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClient;
 
 public class DynamoDBProvider {
-    private static final String IDENTITY_POOL_ID = "";
+    private static final String IDENTITY_POOL_ID = "us-west-2:9d9df09e-67aa-4f73-82ee-63856b548a29";
     private static AmazonDynamoDB instance;
     private static Context context;
     private static CognitoCachingCredentialsProvider credentialsProvider;

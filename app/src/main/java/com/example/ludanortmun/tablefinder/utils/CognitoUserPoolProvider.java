@@ -13,7 +13,7 @@ public class CognitoUserPoolProvider {
         if (userPool == null) {
             userPool = new CognitoUserPool(context, "us-west-2_cecR08Oaw",
                     "5dof0574uvf8vd9gvt1mqccted",
-                    "cue034a7qd4gt0r17i0ui6b3cd6pfr825do0al6maov9t6ga92a",
+                    "",
                     Regions.US_WEST_2);
         }
 
