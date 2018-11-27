@@ -1,4 +1,4 @@
-package com.example.ludanortmun.tablefinder;
+package com.example.ludanortmun.tablefinder.tasks.auth.logout;
 
 import android.os.AsyncTask;
 
@@ -28,17 +28,3 @@ public class LogoutTask extends AsyncTask<LogoutTaskParameters, Void, Void> {
 }
 
 
-class LogoutTaskParameters {
-
-    private CognitoUser user;
-
-    public LogoutTaskParameters(CognitoUser user) {
-        this.user = user;
-    }
-
-    public CognitoUser getUser() {
-
-
-        return user;
-    }
-}

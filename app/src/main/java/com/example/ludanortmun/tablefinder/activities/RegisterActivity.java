@@ -1,10 +1,14 @@
-package com.example.ludanortmun.tablefinder;
+package com.example.ludanortmun.tablefinder.activities;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.ludanortmun.tablefinder.R;
+import com.example.ludanortmun.tablefinder.model.UserProperties;
+import com.example.ludanortmun.tablefinder.utils.CognitoHelper;
 
 public class RegisterActivity extends Activity {
     CognitoHelper cognitoHelper;
@@ -13,7 +17,7 @@ public class RegisterActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        cognitoHelper = CognitoHelper.getInstance(getApplicationContext());
+        cognitoHelper = CognitoHelper.getInstance();
     }
 
     protected void onRegisterClick(View view) {
