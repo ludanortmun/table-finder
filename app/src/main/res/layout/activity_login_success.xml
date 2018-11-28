@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginSuccessActivity">
+    tools:context=".activities.LoginSuccessActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,12 +27,33 @@
             android:text="Log In Successful"
             android:textSize="20dp" />
 
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Logout"
             android:layout_gravity="center"
-            android:onClick="onLogoutClick"/>
+            android:background="@color/colorAccent"
+            android:onClick="onViewEventsClick"
+            android:textColor="#fafafa"
+            android:text="View All Events" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/colorAccent"
+            android:onClick="onCreateEventClick"
+            android:textColor="#fafafa"
+            android:text="Create Event" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/colorAccent"
+            android:onClick="onLogoutClick"
+            android:textColor="#fafafa"
+            android:text="Logout" />
     </LinearLayout>
 
 

@@ -4,10 +4,23 @@ import android.content.Context;
 import android.support.test.InstrumentationRegistry;
 import android.support.test.runner.AndroidJUnit4;
 
+import com.amazonaws.mobileconnectors.dynamodbv2.dynamodbmapper.DynamoDBMapper;
+import com.example.ludanortmun.tablefinder.model.Event;
+import com.example.ludanortmun.tablefinder.utils.CognitoHelper;
+import com.example.ludanortmun.tablefinder.utils.CognitoUserPoolProvider;
+import com.example.ludanortmun.tablefinder.utils.DynamoDBProvider;
+import com.example.ludanortmun.tablefinder.utils.DynamoHelper;
+
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import static org.junit.Assert.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.UUID;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * Instrumented test, which will execute on an Android device.

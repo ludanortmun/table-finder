@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    android:background="@drawable/gradient"
+    tools:context=".activities.RegisterActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -24,100 +25,119 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
+                android:textColor="#fafafa"
                 android:text="Register"
                 android:textSize="20dp" />
+
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fafafa"
                 android:text="Username" />
 
             <EditText
                 android:id="@+id/username_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#fafafa"
                 android:layout_marginBottom="5dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fafafa"
                 android:text="Email" />
 
             <EditText
                 android:id="@+id/email_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#fafafa"
                 android:layout_marginBottom="5dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fafafa"
                 android:text="Name" />
 
             <EditText
                 android:id="@+id/name_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#fafafa"
                 android:layout_marginBottom="5dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fafafa"
                 android:text="Birthdate" />
 
             <EditText
                 android:id="@+id/birthdate_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#fafafa"
                 android:layout_marginBottom="5dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fafafa"
                 android:text="Gender" />
 
             <EditText
                 android:id="@+id/gender_option"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#fafafa"
                 android:layout_marginBottom="5dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fafafa"
                 android:text="Location" />
 
             <EditText
                 android:id="@+id/location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#fafafa"
                 android:layout_marginBottom="5dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fafafa"
                 android:text="Favorite Genre" />
 
             <EditText
                 android:id="@+id/favorite_genre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#fafafa"
                 android:layout_marginBottom="5dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fafafa"
                 android:text="Tell us about yourself" />
 
             <EditText
                 android:id="@+id/about"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="#fafafa"
                 android:layout_marginBottom="5dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fafafa"
                 android:text="Password" />
 
             <EditText
@@ -125,11 +145,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
+                android:textColor="#fafafa"
                 android:inputType="textPassword"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fafafa"
                 android:text="Confirm Password" />
 
             <EditText
@@ -137,14 +159,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
+                android:textColor="#fafafa"
                 android:inputType="textPassword"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Register"
-                android:onClick="onRegisterClick"/>
+                android:background="@color/colorAccent"
+                android:onClick="onRegisterClick"
+                android:textColor="#fafafa"
+                android:text="Register" />
 
         </LinearLayout>
     </ScrollView>

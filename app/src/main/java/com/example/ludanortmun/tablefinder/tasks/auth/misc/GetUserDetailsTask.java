@@ -1,10 +1,12 @@
-package com.example.ludanortmun.tablefinder;
+package com.example.ludanortmun.tablefinder.tasks.auth.misc;
 
 import android.os.AsyncTask;
 
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserDetails;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.GetDetailsHandler;
+import com.example.ludanortmun.tablefinder.model.MapToUserPropertiesConverter;
+import com.example.ludanortmun.tablefinder.model.UserProperties;
 
 import java.util.Map;
 
@@ -33,26 +35,3 @@ public class GetUserDetailsTask extends AsyncTask<GetUserDetailsTaskParameters, 
     }
 }
 
-class GetUserDetailsTaskParameters {
-    private CognitoUser user;
-
-    public UserProperties getResult() {
-        return result;
-    }
-
-    public void setResult(UserProperties result) {
-        this.result = result;
-    }
-
-    public CognitoUser getUser() {
-
-        return user;
-    }
-
-    public GetUserDetailsTaskParameters(CognitoUser user) {
-
-        this.user = user;
-    }
-
-    private UserProperties result;
-}

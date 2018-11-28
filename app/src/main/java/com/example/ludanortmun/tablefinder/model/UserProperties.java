@@ -1,7 +1,4 @@
-package com.example.ludanortmun.tablefinder;
-
-import java.util.Map;
-import java.util.function.Function;
+package com.example.ludanortmun.tablefinder.model;
 
 public class UserProperties {
     private String username;
@@ -23,7 +20,6 @@ public class UserProperties {
         this.favoriteGenre = favoriteGenre;
         this.about = about;
     }
-
     public UserProperties(String username, String email, String password, String name, String birthdate, String gender, String city, String favoriteGenre, String about) {
         this.username = username;
         this.email = email;
@@ -40,53 +36,72 @@ public class UserProperties {
         return username;
     }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     public String getEmail() {
         return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
         return password;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getBirthdate() {
         return birthdate;
     }
 
+    public void setBirthdate(String birthdate) {
+        this.birthdate = birthdate;
+    }
+
     public String getGender() {
         return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
     public String getCity() {
         return city;
     }
 
+    public void setCity(String city) {
+        this.city = city;
+    }
+
     public String getFavoriteGenre() {
         return favoriteGenre;
+    }
+
+    public void setFavoriteGenre(String favoriteGenre) {
+        this.favoriteGenre = favoriteGenre;
     }
 
     public String getAbout() {
         return about;
     }
-}
 
-class MapToUserPropertiesConverter implements Function<Map<String, String>, UserProperties> {
-
-    @Override
-    public UserProperties apply(Map<String, String> userPropertiesMap) {
-        String email = userPropertiesMap.get("email");
-        String name = userPropertiesMap.get("name");
-        String gender = userPropertiesMap.get("gender");
-        String city = userPropertiesMap.get("locale");
-        String birthdate = userPropertiesMap.get("birthdate");
-        String favoriteGenre = userPropertiesMap.get("custom:favorite_genre");
-        String about = userPropertiesMap.get("custom:about");
-
-        UserProperties properties = new UserProperties(email, name, birthdate, gender, city, favoriteGenre, about);
-
-        return properties;
+    public void setAbout(String about) {
+        this.about = about;
     }
 }
+

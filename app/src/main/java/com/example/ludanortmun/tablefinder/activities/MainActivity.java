@@ -1,9 +1,15 @@
-package com.example.ludanortmun.tablefinder;
+package com.example.ludanortmun.tablefinder.activities;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+
+import com.example.ludanortmun.tablefinder.R;
+import com.example.ludanortmun.tablefinder.model.UserProperties;
+import com.example.ludanortmun.tablefinder.utils.CognitoHelper;
+import com.example.ludanortmun.tablefinder.utils.CognitoUserPoolProvider;
+import com.example.ludanortmun.tablefinder.utils.DynamoDBProvider;
 
 import static android.content.ContentValues.TAG;
 
@@ -13,8 +19,12 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        cognitoHelper = CognitoHelper.getInstance(getApplicationContext());
+        CognitoUserPoolProvider.setContext(getApplicationContext());
+        DynamoDBProvider.setContext(getApplicationContext());
+
+        cognitoHelper = CognitoHelper.getInstance();
 
         if (cognitoHelper.isLoggedIn()) {
             Log.d(TAG, "onCreate: signed in");

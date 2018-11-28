@@ -1,4 +1,4 @@
-package com.example.ludanortmun.tablefinder;
+package com.example.ludanortmun.tablefinder.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.ludanortmun.tablefinder.R;
+import com.example.ludanortmun.tablefinder.utils.CognitoHelper;
 
 public class LoginActivity extends Activity {
     EditText usernameText;
@@ -25,7 +28,7 @@ public class LoginActivity extends Activity {
     }
 
     public void onSigninClick(View view) {
-        CognitoHelper cognitoHelper = CognitoHelper.getInstance(this);
+        CognitoHelper cognitoHelper = CognitoHelper.getInstance();
         boolean signInResult = cognitoHelper.login(usernameText.getText().toString(), passwordText.getText().toString());
         if(signInResult) {
             Intent welcomeActivity = new Intent(this.getApplicationContext(), LoginSuccessActivity.class);

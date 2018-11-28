@@ -1,31 +1,34 @@
-package com.example.ludanortmun.tablefinder;
+package com.example.ludanortmun.tablefinder.utils;
 
-import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
 
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUser;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserAttributes;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserCodeDeliveryDetails;
 import com.amazonaws.mobileconnectors.cognitoidentityprovider.CognitoUserPool;
-import com.amazonaws.mobileconnectors.cognitoidentityprovider.handlers.SignUpHandler;
+import com.example.ludanortmun.tablefinder.model.UserProperties;
+import com.example.ludanortmun.tablefinder.tasks.auth.login.LoginTask;
+import com.example.ludanortmun.tablefinder.tasks.auth.login.LoginTaskParameters;
+import com.example.ludanortmun.tablefinder.tasks.auth.logout.LogoutTask;
+import com.example.ludanortmun.tablefinder.tasks.auth.logout.LogoutTaskParameters;
+import com.example.ludanortmun.tablefinder.tasks.auth.misc.CheckSignedInParameters;
+import com.example.ludanortmun.tablefinder.tasks.auth.misc.CheckSignedInTask;
+import com.example.ludanortmun.tablefinder.tasks.auth.misc.GetUserDetailsTask;
+import com.example.ludanortmun.tablefinder.tasks.auth.misc.GetUserDetailsTaskParameters;
+import com.example.ludanortmun.tablefinder.tasks.auth.register.RegisterTask;
+import com.example.ludanortmun.tablefinder.tasks.auth.register.RegisterTaskParameters;
 
 import java.util.concurrent.ExecutionException;
-
-import static android.content.ContentValues.TAG;
 
 public class CognitoHelper {
     private static CognitoHelper instance;
 
     private CognitoUserPool userPool;
 
-    private CognitoHelper(Context context) {
-        this.userPool = CognitoUserPoolProvider.provideCognitoUserPool(context);
+    private CognitoHelper() {
+        this.userPool = CognitoUserPoolProvider.provideCognitoUserPool();
     }
 
-    public static CognitoHelper getInstance(Context context) {
+    public static CognitoHelper getInstance() {
         if (instance == null) {
-            instance = new CognitoHelper(context);
+            instance = new CognitoHelper();
         }
 
         return instance;
@@ -43,20 +46,20 @@ public class CognitoHelper {
         return result;
     }
 
-    boolean login(final String username, final String password) {
+    public boolean login(final String username, final String password) {
         boolean result = false;
 
-        LoginTaskParameters parameters = new LoginTaskParameters(userPool.getUser(username), username, password);
+        LoginTaskParameters parameters = new LoginTaskParameters(userPool.getUser(username), username, password, DynamoDBProvider.getCognitoCachingCredentialsProvider());
         try {
             result = new LoginTask().execute(parameters).get();
-        } catch (ExecutionException | InterruptedException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
         return result;
     }
 
-    boolean isLoggedIn() {
+    public boolean isLoggedIn() {
         boolean result = false;
         CheckSignedInParameters parameters = new CheckSignedInParameters(userPool.getCurrentUser());
         try {
@@ -94,7 +97,7 @@ public class CognitoHelper {
         } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
-
+        result.setUsername(userPool.getCurrentUser().getUserId());
         return result;
     }
 }
