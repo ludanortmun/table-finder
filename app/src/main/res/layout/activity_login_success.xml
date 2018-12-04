@@ -6,25 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".activities.LoginSuccessActivity">
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:divider="@drawable/vertical_divider"
+        android:dividerPadding="12dip"
+        android:showDividers="beginning"
+        android:background="@drawable/gradient2">
 
         <TextView
             android:id="@+id/greeting_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+
             android:text="Welcome BRIAN FELIX"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:textColor="#fafafa"
             android:textSize="20dp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginBottom="50dp"
             android:text="Log In Successful"
+            android:textColor="#fafafa"
             android:textSize="20dp" />
 
 
@@ -35,6 +46,7 @@
             android:background="@color/colorAccent"
             android:onClick="onViewEventsClick"
             android:textColor="#fafafa"
+            android:layout_marginBottom="20dp"
             android:text="View All Events" />
 
         <Button
@@ -44,7 +56,9 @@
             android:background="@color/colorAccent"
             android:onClick="onCreateEventClick"
             android:textColor="#fafafa"
-            android:text="Create Event" />
+            android:text="Create Event"
+            android:layout_marginBottom="20dp"
+            />
 
         <Button
             android:layout_width="wrap_content"
@@ -52,8 +66,9 @@
             android:layout_gravity="center"
             android:background="@color/colorAccent"
             android:onClick="onLogoutClick"
+            android:text="Logout"
             android:textColor="#fafafa"
-            android:text="Logout" />
+            android:layout_marginBottom="20dp"/>
     </LinearLayout>
 
 

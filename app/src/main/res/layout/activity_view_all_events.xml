@@ -7,11 +7,13 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient3">
         <ListView
             android:id="@+id/event_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:textColorHint="#D3D3D3"
+            android:textColor="#fafafa"/>
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>

@@ -7,14 +7,16 @@
     tools:context=".activities.ViewEventActivity">
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/gradient2">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingTop="15dp"
             android:paddingLeft="30dp"
             android:paddingRight="30dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            >
 
             <TextView
                 android:layout_width="wrap_content"
@@ -22,11 +24,13 @@
                 android:layout_gravity="center"
                 android:text="User's event"
                 android:textSize="46dp"
+                android:textColor="#fafafa"
                 android:layout_marginBottom="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fafafa"
                 android:text="Host"/>
 
             <TextView
@@ -34,11 +38,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:hint="eventHost" />
+                android:textColor="#fafafa"
+                android:hint="eventHost"
+                android:textColorHint="#D3D3D3"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fafafa"
                 android:text="Date"/>
 
             <TextView
@@ -46,11 +53,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:hint="eventDate"/>
+                android:textColor="#fafafa"
+                android:hint="eventDate"
+                android:textColorHint="#D3D3D3"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fafafa"
                 android:text="Time"/>
 
             <TextView
@@ -58,23 +68,28 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
-                android:hint="eventTime" />
+                android:textColor="#fafafa"
+                android:hint="eventTime"
+                android:textColorHint="#D3D3D3"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Location"/>
+                android:text="Location"
+                android:textColor="#fafafa"/>
 
             <TextView
                 android:id="@+id/eventLocation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:hint="eventLocation" />
+                android:hint="eventLocation"
+                android:textColorHint="#D3D3D3"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fafafa"
                 android:text="Description"/>
 
             <TextView
@@ -82,11 +97,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:hint="eventDescription" />
+                android:textColor="#fafafa"
+                android:hint="eventDescription"
+                android:textColorHint="#D3D3D3"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#fafafa"
                 android:text="Games to be played"/>
 
             <TextView
@@ -94,7 +112,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:hint="eventGames" />
+                android:textColor="#fafafa"
+                android:hint="eventGames"
+                android:textColorHint="#D3D3D3"/>
 
         </LinearLayout>
     </ScrollView>
